@@ -1,8 +1,23 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
+This project, `realtime-collab`, is a real-time collaboration tool designed to enable multiple users to work together seamlessly on shared documents. The primary goal is to provide an efficient and interactive platform for remote teams to collaborate in real-time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
+
+- Real-time document editing
+- User presence detection
+- Chat functionality
+- Version history and rollback
+
+## Frontend
+
+The frontend of this project is built using React and Vite. It leverages modern web technologies to ensure a fast and responsive user experience.
+
+### Setup
+
+1. **Clone the repository**
+
+   ```sh
+   git clone https://github.com/Charannsai/realtime-collab.git
+   cd realtime-collab
