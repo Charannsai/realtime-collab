@@ -25,8 +25,8 @@ function Navbar() {
           
           <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-1">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/features">Features</NavLink>
-            <NavLink to="/pricing">Pricing</NavLink>
+            <NavLink to="/">About</NavLink>
+            <NavLink to="/">Pricing</NavLink>
             <Link 
               to="/login" 
               className="ml-4 px-4 py-2 rounded-xl glass-button text-sm font-medium"
@@ -61,8 +61,8 @@ function Navbar() {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               <MobileNavLink to="/" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
-              <MobileNavLink to="/features" onClick={() => setIsOpen(false)}>Features</MobileNavLink>
-              <MobileNavLink to="/pricing" onClick={() => setIsOpen(false)}>Pricing</MobileNavLink>
+              <MobileNavLink to="/" onClick={() => setIsOpen(false)}>About</MobileNavLink>
+              <MobileNavLink to="/" onClick={() => setIsOpen(false)}>Pricing</MobileNavLink>
               <MobileNavLink to="/login" onClick={() => setIsOpen(false)}>Login</MobileNavLink>
             </div>
           </motion.div>
