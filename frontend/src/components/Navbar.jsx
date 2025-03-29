@@ -25,7 +25,7 @@ function Navbar() {
           
           <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-1">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/">About</NavLink>
+            <NavLink to="/">Blog</NavLink>
             <NavLink to="/">Pricing</NavLink>
             <Link 
               to="/login" 

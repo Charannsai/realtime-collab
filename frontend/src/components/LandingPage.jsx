@@ -222,16 +222,7 @@ function LandingPage() {
             >
               The all-in-one platform for real-time document editing, communication, and team collaboration.
             </motion.p>
-            <motion.div
-              className="mt-4 max-w-lg mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <p className="text-xl font-bold text-primary-400">
-                Create. Edit. Communicate. All in One Place.
-              </p>
-            </motion.div>
+           
             <motion.div 
               className="mt-8 max-w-md mx-auto sm:flex sm:justify-center md:mt-12"
               initial={{ opacity: 0 }}
