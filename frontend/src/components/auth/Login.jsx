@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import { login } from '../../services/api';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -9,9 +10,24 @@ function Login() {
     password: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
+    
+    try {
+      const response = await login({
+        email: formData.email,
+        password: formData.password
+      });
+      
+      if (response.data.token) {
+        // Store the token
+        localStorage.setItem('token', response.data.token);
+        // Redirect to dashboard or home
+        window.location.href = '/dashboard';
+      }
+    } catch (error) {
+      alert(error.response?.data?.message || 'Login failed');
+    }
   };
 
   return (

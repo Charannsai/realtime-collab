@@ -25,7 +25,7 @@ router.post('/register', async (req, res) => {
     });
 
     // Respond with the token
-    res.status(201).json({ username: user.username,token:token });
+    res.status(201).json({ name: user.name, token });
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }
@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
       expiresIn: '1h',
     });
 
-    res.status(201).json({ username: user.name,token:token });
+    res.status(201).json({ name: user.name, token });
     console.log(user.name)
   } catch (error) {
     res.status(500).json({ error: 'Server error' });

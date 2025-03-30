@@ -20,7 +20,7 @@ const Register = () => {
     if (result.success) {
       navigate('/documents'); // Redirect to documents page after successful registration
     } else {
-      setError(result.error);
+      setError(result.error || 'Registration failed');
     }
   };
 

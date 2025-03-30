@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { UserIcon, EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import { register } from '../../services/api';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -11,9 +12,31 @@ function Register() {
     confirmPassword: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle registration logic here
+    
+    // Validate password match
+    if (formData.password !== formData.confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    try {
+      const response = await register({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      });
+      
+      if (response.data.token) {
+        // Store the token
+        localStorage.setItem('token', response.data.token);
+        // Redirect to dashboard or home
+        window.location.href = '/dashboard';
+      }
+    } catch (error) {
+      alert(error.response?.data?.message || 'Registration failed');
+    }
   };
 
   return (
